@@ -20,7 +20,7 @@ class GameController extends Controller
     }
 
     private function getGame($req){
-
+        return 'lel';
     }
     private function createGame($req){
         
