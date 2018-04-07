@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/requestToken', 'AuthController@authenticate');
+Route::get('/fetchtoken', 'AuthController@authenticate');
