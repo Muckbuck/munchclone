@@ -1,16 +1,18 @@
 
 //A simple get request using es6 fetch()  
-export function apiRequest(url,method) {
+export function apiRequest(url,method, token, cors = true) {
   // Default options are marked with *
+  const mode = (cors ? 'corse' : 'no-corse');
   return fetch(url, {
     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
     credentials: 'same-origin', // include, same-origin, *omit
     headers: {
       'user-agent': 'Mozilla/4.0 MDN Example',
       'content-type': 'application/json',
+      'AUTHORIZATION': token
     },
     method: method, // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, cors, *same-origin
+    mode: mode, // no-cors, cors, *same-origin
     redirect: 'follow', // *manual, follow, error
     referrer: 'no-referrer', // *client, no-referrer
   })
@@ -22,8 +24,4 @@ export function apiRequest(url,method) {
 }
 
 
-export const debugTool = {
-  log: function(data){
-    console.log(data)
-  }
-}
+

@@ -99,4 +99,6 @@ return [
 
     'middleware_match' => true,
 
+    'identifier' => 'id'
+
 ];
