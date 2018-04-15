@@ -1,9 +1,3 @@
-## About the project
+## MunchClone 
+- A web-based game aiming to provide a munchkin-esk gameplay.
 
-With this project I aim to delve deeper into Laravel,
-learn React and create an web-version of the board game Munchkin.
-
-## Project architecture
-
-Just the standard setup for the back-end. And for the time being I will have the front-end in the directory 
-    /public/view/.
