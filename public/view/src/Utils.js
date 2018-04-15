@@ -1,6 +1,6 @@
 
 //A simple get request using es6 fetch()  
-export function apiRequest(url,method, token, cors = true) {
+export function apiRequest(url,method, token, cors = true, body = null) {
   // Default options are marked with *
   const mode = (cors ? 'corse' : 'no-corse');
   return fetch(url, {
@@ -15,6 +15,7 @@ export function apiRequest(url,method, token, cors = true) {
     mode: mode, // no-cors, cors, *same-origin
     redirect: 'follow', // *manual, follow, error
     referrer: 'no-referrer', // *client, no-referrer
+    body: body,
   })
   .then(function(data){
     return data.json()

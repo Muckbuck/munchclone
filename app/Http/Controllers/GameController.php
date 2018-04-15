@@ -8,29 +8,23 @@ use Illuminate\Http\Response;
 
 
 class GameController extends Controller
-{
-    public function getPostPatchDelete(Request $req){
-        
-        switch($req->method()){
-            case 'GET':
-                $this->getGame($req);
-            case 'POST':    
-                return $this->createGame($req);
-            case 'PATCH':
-                $this->updateGame($req);
-            case 'DELETE':
-                $this->deleteGame($req);
-        }
-    }
-
+{         
     private function getGame($req){
         return;
     }
-    private function createGame($req){
-        //Response::json(['success' => 'hi, atiq']);
-         \Log::info(print_r(response()->json(['lel'=>'lol'], 200), true));
-         return response()->json(['lel'=>'lol'], 200);        
-        //response()->json(['success'=>true])->send(); 
+    public function createGame(Request $req){
+         $id = $req->all();
+	 \Log::info(print_r($id, true));
+	 $id = $id[0];
+	 $gameModel = new Game();
+	 $gameModel->user_id = $id;
+	 $gameModel->save();
+	 if($gameModel->$id){
+	    return response()->json(['success'=>true], 200); 
+	 }else{
+ 	    return response()->json(['success'=>false], 401); 
+	 }
+               
     }
     private function updateGame($req){
         return;

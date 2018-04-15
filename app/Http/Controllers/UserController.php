@@ -9,6 +9,6 @@ class UserController extends Controller
   public function getUsers(Request $request){
     $userModel = new User();
     $users = $userModel::all();
-    return response()->json(['data' => $users])
+    return response()->json(['data' => $users]);
   }
 }

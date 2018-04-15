@@ -17,5 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/game/create', 'GameController@getPostPatchDelete');
+//Game
+Route::post('/game/create', 'GameController@createGame');
+//User
 Route::get('/users/get', 'UserController@getUsers');
+//Group
+Route::get('/userGroup/get','UserGroupController@getUserGroups');
